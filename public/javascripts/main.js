@@ -5,6 +5,7 @@ $(document).ready(function () {
     var tts = require("./textToSpeech");
     var chat = require("./chat.js");
     var login = require("./login");
+    var map = require("./map.js");
     var locationEventHandler = require("./locationEventHandler.js");
 
     var $chatForm = $('#chatForm');
@@ -13,6 +14,8 @@ $(document).ready(function () {
     var $modalTrigger = $("#modal_trigger");
     
     var notificationNumber = 0;
+
+    map.initMap();
     
     conversation.sendMessage(true, {}).then(function () {
         notificationNumber++;
@@ -63,4 +66,6 @@ $(document).ready(function () {
             $(this).collapse('hide');
         }
     });
+
+
 });
